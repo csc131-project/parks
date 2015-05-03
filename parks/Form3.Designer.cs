@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSheet = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.checkBox1);
             this.splitContainer1.Panel2.Controls.Add(this.loadButton);
             this.splitContainer1.Panel2.Controls.Add(this.buttonFile);
             this.splitContainer1.Panel2.Controls.Add(this.textBoxPath);
@@ -128,6 +130,15 @@
             this.textBoxSheet.Size = new System.Drawing.Size(240, 20);
             this.textBoxSheet.TabIndex = 1;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(499, 69);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(101, 30);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Not 449";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // LoadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +168,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxSheet;
         private System.Windows.Forms.Button loadButton;
+        private System.Windows.Forms.CheckBox checkBox1;
 
     }
 }

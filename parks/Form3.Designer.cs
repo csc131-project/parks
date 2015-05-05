@@ -30,13 +30,14 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.loadButton = new System.Windows.Forms.Button();
             this.buttonFile = new System.Windows.Forms.Button();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSheet = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel2.Controls.Add(this.checkBox1);
             this.splitContainer1.Panel2.Controls.Add(this.loadButton);
             this.splitContainer1.Panel2.Controls.Add(this.buttonFile);
@@ -64,8 +66,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.textBoxSheet);
-            this.splitContainer1.Size = new System.Drawing.Size(661, 614);
-            this.splitContainer1.SplitterDistance = 479;
+            this.splitContainer1.Size = new System.Drawing.Size(743, 644);
+            this.splitContainer1.SplitterDistance = 502;
             this.splitContainer1.TabIndex = 0;
             // 
             // dataGridView1
@@ -77,8 +79,34 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 479);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 502);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Carnegie",
+            "Clay_Pit",
+            "Heber_Dunes",
+            "Hungry_Valley",
+            "Oceano_Dunes",
+            "Ocotillo_Wells",
+            "Prairie_City"});
+            this.comboBox1.Location = new System.Drawing.Point(226, 69);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(240, 21);
+            this.comboBox1.TabIndex = 8;
+            this.comboBox1.Text = "Select Park";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(499, 69);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(101, 30);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Not 449";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // loadButton
             // 
@@ -125,25 +153,16 @@
             // 
             // textBoxSheet
             // 
-            this.textBoxSheet.Location = new System.Drawing.Point(226, 37);
+            this.textBoxSheet.Location = new System.Drawing.Point(226, 43);
             this.textBoxSheet.Name = "textBoxSheet";
             this.textBoxSheet.Size = new System.Drawing.Size(240, 20);
             this.textBoxSheet.TabIndex = 1;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Location = new System.Drawing.Point(499, 69);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 30);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Not 449";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // LoadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 614);
+            this.ClientSize = new System.Drawing.Size(743, 644);
             this.Controls.Add(this.splitContainer1);
             this.Name = "LoadForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -169,6 +188,7 @@
         private System.Windows.Forms.TextBox textBoxSheet;
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
 
     }
 }

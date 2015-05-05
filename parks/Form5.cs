@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
+using Excel = Microsoft.Office.Interop.Excel;
 
 
 
@@ -89,7 +90,52 @@ namespace parks
             }
 
             return outputTable;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataSet dset = new DataSet();
+            dset.Tables.Add(dk);
+
+            ExportDataSetToExcel(dset);
+          
         } 
+
+        /// This method takes DataSet as input paramenter and it exports the same to excel
+        /// </summary>
+        /// <param name="ds"></param>
+        private void ExportDataSetToExcel(DataSet ds)
+        {
+            //Creae an Excel application instance
+            Excel.Application excelApp = new Excel.Application();
+
+            //Create an Excel workbook instance and open it from the predefined location
+            Excel.Workbook excelWorkBook = excelApp.Workbooks.Open(@"C:\data.xls");
+
+            foreach (DataTable table in ds.Tables)
+            {
+                //Add a new worksheet to workbook with the Datatable name
+                Excel.Worksheet excelWorkSheet = excelWorkBook.Sheets.Add();
+                excelWorkSheet.Name = table.TableName;
+
+                for (int i = 1; i < table.Columns.Count + 1; i++)
+                {
+                    excelWorkSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
+                }
+
+                for (int j = 0; j < table.Rows.Count; j++)
+                {
+                    for (int k = 0; k < table.Columns.Count; k++)
+                    {
+                        excelWorkSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
+                    }
+                }
+            }
+
+            excelWorkBook.Save();
+            excelWorkBook.Close();
+            excelApp.Quit();
+        }
 
     }
 }
